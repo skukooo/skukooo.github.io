@@ -7,15 +7,15 @@
   
   <title>hexo+git部署个人博客 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="环境部署1、安装git 2、安装nodejs 3、安装hexo（利用nmp） 主要命令更改nmp镜像源： npm config set registry http:&#x2F;&#x2F;registry.npm.taobao.org">
+  <meta name="description" content="环境部署1、安装git  ssh config –global user.name “skukooo”   ssh config –global user.email “&amp;#x78;&amp;#x67;&amp;#x30;&amp;#53;&amp;#48;&amp;#51;&amp;#51;&amp;#55;&amp;#64;&amp;#49;&amp;#x36;&amp;#51;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;“   ssh-keygen -t rsa生成密钥和公钥">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo+git部署个人博客">
 <meta property="og:url" content="http://example.com/2020/12/05/hexo-git%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="环境部署1、安装git 2、安装nodejs 3、安装hexo（利用nmp） 主要命令更改nmp镜像源： npm config set registry http:&#x2F;&#x2F;registry.npm.taobao.org">
+<meta property="og:description" content="环境部署1、安装git  ssh config –global user.name “skukooo”   ssh config –global user.email “&amp;#x78;&amp;#x67;&amp;#x30;&amp;#53;&amp;#48;&amp;#51;&amp;#51;&amp;#55;&amp;#64;&amp;#49;&amp;#x36;&amp;#51;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;“   ssh-keygen -t rsa生成密钥和公钥">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-04T16:10:41.000Z">
-<meta property="article:modified_time" content="2020-12-04T16:22:04.354Z">
+<meta property="article:modified_time" content="2020-12-05T03:40:15.036Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -89,10 +89,51 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h5 id="环境部署"><a href="#环境部署" class="headerlink" title="环境部署"></a>环境部署</h5><p>1、安装git</p>
-<p>2、安装nodejs</p>
+<blockquote>
+<p>ssh config –global user.name “skukooo”</p>
+</blockquote>
+<blockquote>
+<p>ssh config –global user.email “<a href="mailto:&#x78;&#x67;&#x30;&#53;&#48;&#51;&#51;&#55;&#64;&#49;&#x36;&#51;&#46;&#x63;&#x6f;&#109;">&#x78;&#x67;&#x30;&#53;&#48;&#51;&#51;&#55;&#64;&#49;&#x36;&#51;&#46;&#x63;&#x6f;&#109;</a>“</p>
+</blockquote>
+<blockquote>
+<p>ssh-keygen -t rsa生成密钥和公钥，将公钥中的内容复制到github的SSH keys中</p>
+</blockquote>
+<blockquote>
+<p>通过ssh -T <a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;">&#103;&#105;&#x74;&#64;&#x67;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;</a>测试是否绑定到了github</p>
+</blockquote>
+<p>2、安装nodejs<br>在系统变量中新建：</p>
+<blockquote>
+<p>变量名：NODE_PATH<br>变量值：自定义的模块安装的路径</p>
+</blockquote>
+<p>修改用户变量中的path：</p>
+<blockquote>
+<p>npm路径改为：nodejs/node_global</p>
+</blockquote>
 <p>3、安装hexo（利用nmp）</p>
-<h5 id="主要命令"><a href="#主要命令" class="headerlink" title="主要命令"></a>主要命令</h5><p>更改nmp镜像源：</p>
+<p>更改nmp镜像源：</p>
+<blockquote>
 <p>npm config set registry <a target="_blank" rel="noopener" href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a></p>
+</blockquote>
+<blockquote>
+<p>初次安装需要hexo init和npm install</p>
+</blockquote>
+<blockquote>
+<p>hexo g 生成页面</p>
+</blockquote>
+<blockquote>
+<p>hexo s 启动预览</p>
+</blockquote>
+<p>4、部署hexo到github pages</p>
+<blockquote>
+<p>npm install hexo-deployer-git –save</p>
+</blockquote>
+<blockquote>
+<p>修改 _config.yml的deployment部分<br>type：git<br>repository：<a href="mailto:&#x67;&#105;&#x74;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#109;">&#x67;&#105;&#x74;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#109;</a>：skukooo/skukooo.github.io.git<br>branch：master</p>
+</blockquote>
+<blockquote>
+<p>运行hexo d</p>
+</blockquote>
+<p>5、以后每次写完运行hexo g和hexo d即可</p>
 
       
     </div>
