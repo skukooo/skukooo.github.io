@@ -176,7 +176,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-06 00:00:04" itemprop="dateModified" datetime="2020-12-06T00:00:04+08:00">2020-12-06</time>
+                <time title="Modified: 2020-12-06 13:47:50" itemprop="dateModified" datetime="2020-12-06T13:47:50+08:00">2020-12-06</time>
               </span>
 
           
@@ -220,6 +220,10 @@ T(N)=Θ(G(N)):表示T(N)的增长率等于G(N)</code></pre>
 <li>i层嵌套for循环的时间复杂度为O(N<sup>i</sup>)</li>
 <li>if/else语句时间复杂度取决于判断所花时间+max(if语句块时间,else语句块时间)</li>
 </ul>
+<h6 id="最大子序列和"><a href="#最大子序列和" class="headerlink" title="最大子序列和"></a>最大子序列和</h6><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//算法1</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MaxSubSequenceSum</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> A[],<span class="keyword">int</span> N )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ThisSum=<span class="number">0</span>,MaxSum=<span class="number">0</span>,i,j,k;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;N;i++)</span><br><span class="line">    <span class="keyword">for</span>(j=i;j&lt;N;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(k=i;k&lt;=j;k++)</span><br><span class="line">        ThisSum+=A[k];</span><br><span class="line">        <span class="keyword">if</span>(ThisSum&gt;MaxSum)</span><br><span class="line">        MaxSum=ThisSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>算法1的时间复杂度为O(N<sup>3</sup>)，问题</p>
+</blockquote>
 <h5 id="递归与循环的区别"><a href="#递归与循环的区别" class="headerlink" title="递归与循环的区别"></a>递归与循环的区别</h5>
       
     </div>
@@ -262,10 +266,16 @@ T(N)=Θ(G(N)):表示T(N)的增长率等于G(N)</code></pre>
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-12-05 00:10:41 / Modified: 11:40:15" itemprop="dateCreated datePublished" datetime="2020-12-05T00:10:41+08:00">2020-12-05</time>
+              <time title="Created: 2020-12-05 00:10:41" itemprop="dateCreated datePublished" datetime="2020-12-05T00:10:41+08:00">2020-12-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-06 13:26:40" itemprop="dateModified" datetime="2020-12-06T13:26:40+08:00">2020-12-06</time>
+              </span>
 
           
 
@@ -283,15 +293,20 @@ T(N)=Θ(G(N)):表示T(N)的增长率等于G(N)</code></pre>
 <p>ssh config –global user.name “skukooo”</p>
 </blockquote>
 <blockquote>
-<p>ssh config –global user.email “<a href="mailto:&#x78;&#x67;&#48;&#x35;&#48;&#51;&#x33;&#55;&#64;&#49;&#54;&#51;&#46;&#x63;&#111;&#x6d;">&#x78;&#x67;&#48;&#x35;&#48;&#51;&#x33;&#55;&#64;&#49;&#54;&#51;&#46;&#x63;&#111;&#x6d;</a>“</p>
+<p>ssh config –global user.email “<a href="mailto:&#120;&#103;&#x30;&#x35;&#x30;&#x33;&#51;&#55;&#64;&#49;&#54;&#x33;&#46;&#99;&#111;&#x6d;">&#120;&#103;&#x30;&#x35;&#x30;&#x33;&#51;&#55;&#64;&#49;&#54;&#x33;&#46;&#99;&#111;&#x6d;</a>“</p>
 </blockquote>
 <blockquote>
 <p>ssh-keygen -t rsa生成密钥和公钥，将公钥中的内容复制到github的SSH keys中</p>
 </blockquote>
 <blockquote>
-<p>通过ssh -T <a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a>测试是否绑定到了github</p>
+<p>通过ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#109;">&#103;&#x69;&#x74;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#109;</a>测试是否绑定到了github</p>
 </blockquote>
-<p>2、安装nodejs<br>在系统变量中新建：</p>
+<p>2、安装nodejs</p>
+<p>设置npm安装全局模块时的路径</p>
+<blockquote>
+<p>npm config set prefix “node_global路径”<br>npm config ser cache “node_cache路径“</p>
+</blockquote>
+<p>在系统变量中新建：</p>
 <blockquote>
 <p>变量名：NODE_PATH<br>变量值：自定义的模块安装的路径</p>
 </blockquote>
@@ -318,7 +333,7 @@ T(N)=Θ(G(N)):表示T(N)的增长率等于G(N)</code></pre>
 <p>npm install hexo-deployer-git –save</p>
 </blockquote>
 <blockquote>
-<p>修改 _config.yml的deployment部分<br>type：git<br>repository：<a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#x6d;">&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#x6d;</a>：skukooo/skukooo.github.io.git<br>branch：master</p>
+<p>修改 _config.yml的deployment部分<br>type：git<br>repository：<a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#109;">&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#109;</a>：skukooo/skukooo.github.io.git<br>branch：master</p>
 </blockquote>
 <blockquote>
 <p>运行hexo d</p>
