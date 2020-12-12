@@ -697,7 +697,7 @@ T(N)=Θ(G(N)):表示T(N)的增长率等于G(N)</code></pre>
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-12 19:41:51" itemprop="dateModified" datetime="2020-12-12T19:41:51+08:00">2020-12-12</time>
+                <time title="Modified: 2020-12-12 20:39:18" itemprop="dateModified" datetime="2020-12-12T20:39:18+08:00">2020-12-12</time>
               </span>
 
           
@@ -725,8 +725,7 @@ T(N)=Θ(G(N)):表示T(N)的增长率等于G(N)</code></pre>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><hr>
-<h4 id="线性表的概念"><a href="#线性表的概念" class="headerlink" title="线性表的概念"></a>线性表的概念</h4><p>每一个线性表实例都是一系列元素的有序集合。</p>
+          <h4 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h4><p>每一个线性表实例都是一系列元素的有序集合。</p>
 <p>线性表的ADT的描述：</p>
 <pre><code>抽象数据类型linearList
 &#123;
@@ -756,15 +755,31 @@ T(N)=Θ(G(N)):表示T(N)的增长率等于G(N)</code></pre>
 <li>中序遍历<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inOrder</span><span class="params">(binaryTreeNode&lt;T&gt; *t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    inOrder(t-&gt;leftChild);</span><br><span class="line">    visit(t);</span><br><span class="line">    inOrder(t-&gt;rightChild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>后序遍历<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">postOrder</span><span class="params">(binaryTreeNode&lt;T&gt; *t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    postOrder(t-&gt;leftChild);</span><br><span class="line">    postOrder(t-&gt;rightChild);</span><br><span class="line">    visit(t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>层次遍历<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line">arrayQueue&lt;binaryTreeNode&lt;T&gt;*&gt; q;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">levelOrder</span><span class="params">(BinaryTreeNode&lt;T&gt; *t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(t!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        visit(t);</span><br><span class="line">        <span class="keyword">if</span>(t-&gt;leftChild!=<span class="literal">NULL</span>)</span><br><span class="line">        q.push(t-&gt;leftChild);</span><br><span class="line">        <span class="keyword">if</span>(t-&gt;rightChild!=<span class="literal">NULL</span>)</span><br><span class="line">        q.push(t-&gt;rightChild);</span><br><span class="line">        <span class="keyword">try</span>&#123;t=q.front();&#125;</span><br><span class="line">        <span class="keyword">catch</span>(queueEmpty)&#123;<span class="keyword">return</span>;&#125;</span><br><span class="line">        q.pop();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>二叉树的应用：在信号传输网络的节点上设置信号放大器，是信号从源节点传输到目的节点所产生的衰减在容忍范围内</p>
-</blockquote>
+
+
 </li>
 </ul>
-<p><b>二叉树的应用</b>：编译器的设计，生成表达式树</p>
-<p><b>二叉查找树</b>：在二叉树的基础上增加一个约束——左子树的值 &lt; 父节点的值 &lt; 右子树的值</p>
-<p><b>平衡二叉树</b>：</p>
-<h4 id="图"><a href="#图" class="headerlink" title="图"></a>图</h4>
+<h6 id="二叉查找树-搜索树"><a href="#二叉查找树-搜索树" class="headerlink" title="二叉查找树(搜索树)"></a>二叉查找树(搜索树)</h6><p>在二叉树的基础上增加一个约束——左子树的关键字的值 &lt; 父节点关键字的值 &lt; 右子树关键字的值</p>
+<h6 id="竞赛树"><a href="#竞赛树" class="headerlink" title="竞赛树"></a>竞赛树</h6><p>eg：<br>1、n个进行比赛的选手组成竞赛树的叶子节点，两个选手一组组成一个节点的左子节点和右子节点，胜利者被记录在该组的父节点中，直到确定根节点中记录的比赛选手，比赛结束<br>2、从n个数中找出最大的数或最小的数</p>
+<h6 id="优先级队列"><a href="#优先级队列" class="headerlink" title="优先级队列"></a>优先级队列</h6><h6 id="平衡二叉树：AVL和红-黑树"><a href="#平衡二叉树：AVL和红-黑树" class="headerlink" title="平衡二叉树：AVL和红-黑树"></a>平衡二叉树：AVL和红-黑树</h6><blockquote>
+<p>AVL树的特点：左子树和右子树的高度差为1</p>
+</blockquote>
+<blockquote>
+<p>红黑树特征<br>1、根节点和所有外部节点都是黑色<br>2、根节点至外部节点的路径上没有两个连续的红色节点（指针）<br>3、根节点至外部节点的所有路径上黑色节点（指针）数目相同<br>注：指向黑色子节点的指针为黑指针，指向红色子节点的指针为红指针</p>
+</blockquote>
+<blockquote>
+<p>注：C++的STL的map和multimap是通过红-黑树实现的</p>
+</blockquote>
+<blockquote>
+<p>分裂树</p>
+</blockquote>
+<blockquote>
+<p>B树<br>对于大型字典（无法将整个字典存于内存中，需要进行磁盘读写），B树优于AVL和红-黑树</p>
+</blockquote>
+<h4 id="图"><a href="#图" class="headerlink" title="图"></a>图</h4><blockquote>
+<p>概念：用线连接起来的节点的集合，带箭头的连线称为有向边，不带箭头的称为无向边</p>
+</blockquote>
+
       
     </div>
 
