@@ -266,6 +266,13 @@
 
               <time title="Created: 2020-12-07 19:16:37" itemprop="dateCreated datePublished" datetime="2020-12-07T19:16:37+08:00">2020-12-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-12 12:33:33" itemprop="dateModified" datetime="2020-12-12T12:33:33+08:00">2020-12-12</time>
+              </span>
 
           
   
@@ -292,7 +299,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <h6 id="Javascript的六大作用"><a href="#Javascript的六大作用" class="headerlink" title="Javascript的六大作用"></a>Javascript的六大作用</h6><blockquote>
+<p>1、通过doucument.write直接写入html输入流<br>2、处理onclick等事件<br>3、通过document.getElementById.innerHtml改变html内容<br>4、通过处理事件改变Html的图像<br>5、改变Html样式<br>6、验证输入</p>
+</blockquote>
+<h6 id="Javascript的几个重要更新节点"><a href="#Javascript的几个重要更新节点" class="headerlink" title="Javascript的几个重要更新节点"></a>Javascript的几个重要更新节点</h6><blockquote>
+<ul>
+<li>1997：发布ES1</li>
+<li>1999：发布ES3，添加正则表达式和try/catch</li>
+<li>2009：发布ES5，添加strict mode（严格模式）和JSON支持</li>
+<li>2015：发布ES6，添加类和模块</li>
+<li>2016：发布ES7，添加指数运算符（**）和Array.prototype.includes</li>
+</ul>
+</blockquote>
+<h6 id="id选择器和class选择器"><a href="#id选择器和class选择器" class="headerlink" title="id选择器和class选择器"></a>id选择器和class选择器</h6><blockquote>
+<p>id选择器用于控制单一元素，class选择器用于控制一组元素</p>
+</blockquote>
+
       
     </div>
 
@@ -675,7 +697,7 @@ T(N)=Θ(G(N)):表示T(N)的增长率等于G(N)</code></pre>
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-11 19:01:50" itemprop="dateModified" datetime="2020-12-11T19:01:50+08:00">2020-12-11</time>
+                <time title="Modified: 2020-12-12 19:41:51" itemprop="dateModified" datetime="2020-12-12T19:41:51+08:00">2020-12-12</time>
               </span>
 
           
@@ -730,8 +752,14 @@ T(N)=Θ(G(N)):表示T(N)的增长率等于G(N)</code></pre>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//树节点的声明</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>  <span class="title">TreeNode</span> *<span class="title">PtrToNode</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    ElementType Element;</span><br><span class="line">    PtrToNode Firstchild;</span><br><span class="line">    PtrToNode NextSibling;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>先序遍历：在处理子节点之前先处理他们的父节点</li>
-<li>后序遍历：先计算子节点再处理父节点</li>
+<li>前序遍历<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(binaryTreeNode&lt;T&gt; *t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (t!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        visit(t);</span><br><span class="line">        preOrder(t-&gt;leftChild);</span><br><span class="line">        preOrder(t-&gt;rightChild);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>中序遍历<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inOrder</span><span class="params">(binaryTreeNode&lt;T&gt; *t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    inOrder(t-&gt;leftChild);</span><br><span class="line">    visit(t);</span><br><span class="line">    inOrder(t-&gt;rightChild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>后序遍历<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">postOrder</span><span class="params">(binaryTreeNode&lt;T&gt; *t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    postOrder(t-&gt;leftChild);</span><br><span class="line">    postOrder(t-&gt;rightChild);</span><br><span class="line">    visit(t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>层次遍历<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line">arrayQueue&lt;binaryTreeNode&lt;T&gt;*&gt; q;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">levelOrder</span><span class="params">(BinaryTreeNode&lt;T&gt; *t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(t!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        visit(t);</span><br><span class="line">        <span class="keyword">if</span>(t-&gt;leftChild!=<span class="literal">NULL</span>)</span><br><span class="line">        q.push(t-&gt;leftChild);</span><br><span class="line">        <span class="keyword">if</span>(t-&gt;rightChild!=<span class="literal">NULL</span>)</span><br><span class="line">        q.push(t-&gt;rightChild);</span><br><span class="line">        <span class="keyword">try</span>&#123;t=q.front();&#125;</span><br><span class="line">        <span class="keyword">catch</span>(queueEmpty)&#123;<span class="keyword">return</span>;&#125;</span><br><span class="line">        q.pop();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>二叉树的应用：在信号传输网络的节点上设置信号放大器，是信号从源节点传输到目的节点所产生的衰减在容忍范围内</p>
+</blockquote>
+</li>
 </ul>
 <p><b>二叉树的应用</b>：编译器的设计，生成表达式树</p>
 <p><b>二叉查找树</b>：在二叉树的基础上增加一个约束——左子树的值 &lt; 父节点的值 &lt; 右子树的值</p>
