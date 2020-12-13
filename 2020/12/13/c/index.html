@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="const修饰符与指针 const &lt;Type&gt; *ptr：指向const对象的指针，不能通过解引用修改所指向的对象，const类型对象的地址只能赋值给此种类型的指针&lt;Type&gt; *const ptr：指针的值不能被修改，但可以通过解引用修改指针所指向的对象  引用与指针的区别 引用类型在声明的时候必须被初始化：引用一旦被定义就不能更改它所指向的对象了引用的声明方式：&amp;lt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2020/12/04/hello-world/index.html">
+<meta property="og:title" content="c++">
+<meta property="og:url" content="http://example.com/2020/12/13/c/index.html">
 <meta property="og:site_name" content="计算机技术">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="const修饰符与指针 const &lt;Type&gt; *ptr：指向const对象的指针，不能通过解引用修改所指向的对象，const类型对象的地址只能赋值给此种类型的指针&lt;Type&gt; *const ptr：指针的值不能被修改，但可以通过解引用修改指针所指向的对象  引用与指针的区别 引用类型在声明的时候必须被初始化：引用一旦被定义就不能更改它所指向的对象了引用的声明方式：&amp;lt">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-04T15:56:52.305Z">
-<meta property="article:modified_time" content="2020-12-04T15:54:52.000Z">
+<meta property="article:published_time" content="2020-12-13T05:01:56.000Z">
+<meta property="article:modified_time" content="2020-12-13T05:28:50.218Z">
 <meta property="article:author" content="耿伟">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2020/12/04/hello-world/">
+<link rel="canonical" href="http://example.com/2020/12/13/c/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>Hello World | 计算机技术</title>
+  <title>c++ | 计算机技术</title>
   
 
 
@@ -150,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/04/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/13/c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -163,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          c++
         </h1>
 
         <div class="post-meta">
@@ -174,7 +174,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-12-04 23:56:52 / Modified: 23:54:52" itemprop="dateCreated datePublished" datetime="2020-12-04T23:56:52+08:00">2020-12-04</time>
+              <time title="Created: 2020-12-13 13:01:56 / Modified: 13:28:50" itemprop="dateCreated datePublished" datetime="2020-12-13T13:01:56+08:00">2020-12-13</time>
             </span>
 
           
@@ -186,8 +186,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2020/12/04/hello-world/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/12/04/hello-world/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/12/13/c/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/12/13/c/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -202,19 +202,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <h6 id="const修饰符与指针"><a href="#const修饰符与指针" class="headerlink" title="const修饰符与指针"></a>const修饰符与指针</h6><blockquote>
+<p><b>const &lt;Type&gt; *ptr</b>：指向const对象的指针，不能通过解引用修改所指向的对象，const类型对象的地址只能赋值给此种类型的指针<br><b>&lt;Type&gt; *const ptr</b>：指针的值不能被修改，但可以通过解引用修改指针所指向的对象</p>
+</blockquote>
+<h6 id="引用与指针的区别"><a href="#引用与指针的区别" class="headerlink" title="引用与指针的区别"></a>引用与指针的区别</h6><blockquote>
+<p><b>引用类型在声明的时候必须被初始化</b>：引用一旦被定义就不能更改它所指向的对象了<br><b>引用的声明方式</b>：&lt;Type&gt; &amp;ref=val，对引用的所有操作都被直接应用到它所指向的对象上了<br><b>只有const引用才能被字面常量初始化</b>：字面常量是不可寻址的，为了实现引用编译器会生成一个临时对象，引用实际指向的就是该临时对象</p>
+</blockquote>
 
     </div>
 
@@ -230,13 +223,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/12/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="prev" title="数据结构">
-      <i class="fa fa-chevron-left"></i> 数据结构
+    <a href="/2020/12/09/%E8%BD%AC%E8%A1%8C/" rel="prev" title="转行">
+      <i class="fa fa-chevron-left"></i> 转行
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/12/05/hexo-git%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="next" title="hexo+git部署个人博客">
-      hexo+git部署个人博客 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -296,7 +286,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#const%E4%BF%AE%E9%A5%B0%E7%AC%A6%E4%B8%8E%E6%8C%87%E9%92%88"><span class="nav-number">1.</span> <span class="nav-text">const修饰符与指针</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E4%B8%8E%E6%8C%87%E9%92%88%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">引用与指针的区别</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
