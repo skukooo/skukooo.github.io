@@ -170,7 +170,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-12-13 13:01:56 / Modified: 13:28:50" itemprop="dateCreated datePublished" datetime="2020-12-13T13:01:56+08:00">2020-12-13</time>
+              <time title="Created: 2020-12-13 13:01:56 / Modified: 22:00:03" itemprop="dateCreated datePublished" datetime="2020-12-13T13:01:56+08:00">2020-12-13</time>
             </span>
 
           
@@ -199,11 +199,21 @@
 
       
           <h6 id="const修饰符与指针"><a href="#const修饰符与指针" class="headerlink" title="const修饰符与指针"></a>const修饰符与指针</h6><blockquote>
-<p><b>const &lt;Type&gt; *ptr</b>：指向const对象的指针，不能通过解引用修改所指向的对象，const类型对象的地址只能赋值给此种类型的指针<br><b>&lt;Type&gt; *const ptr</b>：指针的值不能被修改，但可以通过解引用修改指针所指向的对象</p>
+<p><b>const &lt;Type&gt; *ptr</b>：指向const对象的指针，不能通过解引用修改所指向的对象，const类型对象的地址只能赋值给此种类型的指针，(const修饰的是&lt;Type&gt;)<br><b>&lt;Type&gt; *const ptr</b>：指针的值不能被修改，但可以通过解引用修改指针所指向的对象(const修饰的是ptr)</p>
 </blockquote>
 <h6 id="引用与指针的区别"><a href="#引用与指针的区别" class="headerlink" title="引用与指针的区别"></a>引用与指针的区别</h6><blockquote>
-<p><b>引用类型在声明的时候必须被初始化</b>：引用一旦被定义就不能更改它所指向的对象了<br><b>引用的声明方式</b>：&lt;Type&gt; &amp;ref=val，对引用的所有操作都被直接应用到它所指向的对象上了<br><b>只有const引用才能被字面常量初始化</b>：字面常量是不可寻址的，为了实现引用编译器会生成一个临时对象，引用实际指向的就是该临时对象</p>
+<p><b>引用类型在声明的时候必须被初始化</b>：引用一旦被定义就不能更改它所指向的对象了<br><b>引用的声明方式</b>：&lt;Type&gt; &amp;ref=val，对引用的所有操作都被直接应用到它所指向的对象上了<br><b>只有const引用才能被字面常量初始化</b>：字面常量是不可寻址的，为了实现引用编译器会生成一个临时对象，引用实际指向的就是该临时对象<br><b>const引用可以用不同类型的对象初始化或不可寻址的值（如字面常量）</b><br><b>一个指向const对象的指针的引用</b>：const &lt;Type&gt; * const &amp;ptr</p>
 </blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用const对象的地址初始化一个引用</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> val=<span class="number">100</span>;</span><br><span class="line"><span class="comment">//错误,const对象的引用必须是const引用</span></span><br><span class="line"><span class="keyword">int</span> * &amp;ref=&amp;val;</span><br><span class="line"><span class="comment">//错误，ref不是const对象的引用，而是指向const对象的指针的引用</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* &amp;ref=&amp;val;</span><br><span class="line"><span class="comment">//正确</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* <span class="keyword">const</span> &amp;ref=&amp;val;</span><br></pre></td></tr></table></figure>
+<h6 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明枚举类型，在默认情况下，yellow的值是2，green的值是3</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">trafficLight</span>&#123;</span>red=<span class="number">1</span>,yellow,green&#125;;</span><br><span class="line"><span class="comment">//错误，不能将其他类型赋值给枚举类型</span></span><br><span class="line">trafficLight blue=<span class="number">4</span>;</span><br><span class="line"><span class="comment">//错误，不能将非枚举成员赋值给trafficLight类型枚举</span></span><br><span class="line">trafficLight blue=purple;</span><br><span class="line"><span class="comment">//正确</span></span><br><span class="line">trafficLight blue=red;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在算术表达式中，枚举成员会被隐式转换成算数类型</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注意:下述代码声明了一个const指针str，而非指向const对象的指针</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* cstring;</span><br><span class="line"><span class="keyword">const</span> cstring str;</span><br><span class="line"><span class="comment">//const cstring str != const char* str</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>#define将一个名字设置为预处理变量，#ifdef和#ifndef检查预处理变量是否已定义</p>
+</blockquote>
+<h6 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h6><p>有迭代器的类型都拥有能返回迭代器的成员，如begin()和end()，begin返回指向容器第一个元素的迭代器，end返回指向容器尾元素下一位的迭代器</p>
 
       
     </div>
