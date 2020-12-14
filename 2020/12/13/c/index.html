@@ -28,7 +28,7 @@
 <meta property="og:description" content="const修饰符与指针 const &lt;Type&gt; *ptr：指向const对象的指针，不能通过解引用修改所指向的对象，const类型对象的地址只能赋值给此种类型的指针，(const修饰的是&lt;Type&gt;)&lt;Type&gt; *const ptr：指针的值不能被修改，但可以通过解引用修改指针所指向的对象(const修饰的是ptr)  引用与指针的区别 引用类型在声明的时候">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-13T05:01:56.000Z">
-<meta property="article:modified_time" content="2020-12-13T14:00:03.731Z">
+<meta property="article:modified_time" content="2020-12-14T13:42:48.967Z">
 <meta property="article:author" content="耿伟">
 <meta name="twitter:card" content="summary">
 
@@ -172,10 +172,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-12-13 13:01:56 / Modified: 22:00:03" itemprop="dateCreated datePublished" datetime="2020-12-13T13:01:56+08:00">2020-12-13</time>
+              <time title="Created: 2020-12-13 13:01:56" itemprop="dateCreated datePublished" datetime="2020-12-13T13:01:56+08:00">2020-12-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-14 21:42:48" itemprop="dateModified" datetime="2020-12-14T21:42:48+08:00">2020-12-14</time>
+              </span>
 
           
   
@@ -218,6 +224,16 @@
 <p>#define将一个名字设置为预处理变量，#ifdef和#ifndef检查预处理变量是否已定义</p>
 </blockquote>
 <h6 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h6><p>有迭代器的类型都拥有能返回迭代器的成员，如begin()和end()，begin返回指向容器第一个元素的迭代器，end返回指向容器尾元素下一位的迭代器</p>
+<h6 id="边界处理"><a href="#边界处理" class="headerlink" title="边界处理"></a>边界处理</h6><blockquote>
+<p>1、将数组作为参数传递给函数时，函数访问数组元素不能超界<br>解决方案一：begin()函数返回数组指向数组首元素的指针，end()函数返回指向数组尾元素下一位的指针，通过比较两个指针的值来确定是否达到数组边界<br>解决方案二：给函数传递数组以及数组大小两个参数</p>
+</blockquote>
+<h6 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h6><blockquote>
+<p>int main(int argc,char * argv[]),第二个形参是一个数组，第一个形参是数组中字符串的数量<br>函数的类型由函数的返回值类型与形参类型共同决定的</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">shorterString</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span> &amp;s1,<span class="keyword">const</span> <span class="built_in">string</span> &amp;s2)</span></span>;</span><br><span class="line"><span class="keyword">bool</span> (*ptr)(<span class="keyword">const</span> <span class="built_in">string</span> &amp;s1,<span class="keyword">const</span> <span class="built_in">string</span> &amp;s2);</span><br><span class="line">ptr=shortString;</span><br><span class="line"><span class="comment">//该函数的类型为bool(const string &amp;s1,const string &amp;s2)</span></span><br><span class="line"><span class="comment">//以下三种调用函数的方法是等价的</span></span><br><span class="line"><span class="keyword">bool</span> abc=shortString(<span class="keyword">const</span> <span class="built_in">string</span> &amp;s1,<span class="keyword">const</span> <span class="built_in">string</span> &amp;s2)</span><br><span class="line"><span class="keyword">bool</span> abc=ptr(<span class="keyword">const</span> <span class="built_in">string</span> &amp;s1,<span class="keyword">const</span> <span class="built_in">string</span> &amp;s2)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>把函数当实参使用时，函数会被自动转换成指向该函数的指针，函数不能作为返回值，但函数指针可以。<br>返回指向函数的指针：int (<em>f1(int))(int</em>,int);</p>
+</blockquote>
 
     </div>
 
@@ -296,7 +312,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#const%E4%BF%AE%E9%A5%B0%E7%AC%A6%E4%B8%8E%E6%8C%87%E9%92%88"><span class="nav-number">1.</span> <span class="nav-text">const修饰符与指针</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E4%B8%8E%E6%8C%87%E9%92%88%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">引用与指针的区别</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">枚举类型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">迭代器</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#const%E4%BF%AE%E9%A5%B0%E7%AC%A6%E4%B8%8E%E6%8C%87%E9%92%88"><span class="nav-number">1.</span> <span class="nav-text">const修饰符与指针</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E4%B8%8E%E6%8C%87%E9%92%88%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">引用与指针的区别</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">枚举类型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">迭代器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%B9%E7%95%8C%E5%A4%84%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">边界处理</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">6.</span> <span class="nav-text">函数</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
