@@ -28,7 +28,7 @@
 <meta property="og:description" content="Javascript的六大作用 1、通过doucument.write直接写入html输入流2、处理onclick等事件3、通过document.getElementById.innerHtml改变html内容4、通过处理事件改变Html的图像5、改变Html样式6、验证输入  Javascript的几个重要更新节点  1997：发布ES1 1999：发布ES3，添加正则表达式和try&#x2F;catch">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-07T11:16:37.000Z">
-<meta property="article:modified_time" content="2020-12-22T14:05:12.638Z">
+<meta property="article:modified_time" content="2020-12-24T13:33:14.000Z">
 <meta property="article:author" content="耿伟">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-22 22:05:12" itemprop="dateModified" datetime="2020-12-22T22:05:12+08:00">2020-12-22</time>
+                <time title="Modified: 2020-12-24 21:33:14" itemprop="dateModified" datetime="2020-12-24T21:33:14+08:00">2020-12-24</time>
               </span>
 
           
@@ -220,8 +220,14 @@
 <li>2016：发布ES7，添加指数运算符（**）和Array.prototype.includes</li>
 </ul>
 </blockquote>
+<h5 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h5><blockquote>
+<p>DOM是针对HTML和XML文档的一个API，蒋文档描述为一个由多层节点构成的结构<br>通过DOM可以实现对HTML和XML文档某一部分的添加、删除和修改操作<br>JavaScript中的所有节点类型都继承自Node类型,每个节点都有一个nodeType属性<br>Node类型定义了12个数值常量来表示节点类型：<br>Node.ELEMENT_NODE == 1<br>Node.ATTRIBUTE_NODE == 2<br>Node.TEXT_NODE == 3<br>Node.CDATA_SECTION_NODE == 4<br>Node.ENTITY_REFERENCE_NODE == 5<br>Node.ENTITY_NODE == 6<br>Node.PROCESSING_INSTRUCTION_NODE == 7<br>Node.COMMENT_NODE == 8<br>Node.DOCUMENT_NODE == 9<br>Node.DOCUMENT_TYPE_NODE == 10<br>Node.DOCUMENT_FRAGMENT_NODE == 11<br>Node.NOTATION_NODE == 12<br>HTMLDocument类型继承自Document类型，document对象是HTMLDocument的实例，同时是windown对象的属性<br>document对象属性：指向html元素的documentElement属性，指向body的body属性，指向title的title属性，此外还有URL、domain以及referrer属性<br>Document类提供了getElementById()、getElementByTagName()方法</p>
+</blockquote>
 <h6 id="id选择器和class选择器"><a href="#id选择器和class选择器" class="headerlink" title="id选择器和class选择器"></a>id选择器和class选择器</h6><blockquote>
 <p>id选择器用于控制单一元素，class选择器用于控制一组元素</p>
+</blockquote>
+<h6 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h6><blockquote>
+<p>函数内部有两个特殊的对象：arguments和this<br>arguments对象保存所有传入函数的参数，有一个callee属性，callee的属性值为指向函数的指针<br>this是函数执行环境对象的引用，在全局作用域中，this是window对象的引用</p>
 </blockquote>
 <h6 id="JavaScript的一些注意点"><a href="#JavaScript的一些注意点" class="headerlink" title="JavaScript的一些注意点"></a>JavaScript的一些注意点</h6><blockquote>
 <p>1、在函数内部，通过var关键字可以显式地声明一个变量为局部变量，不加var关键字的变量被认为是全局变量，会覆盖函数外的同名变量<br>2、执行流进入函数，该函数的执行环境会被推入执行环境栈，函数执行完成后被弹出栈，每个执行环境都有一个与之关联的变量对象，环境中的所有变量和函数都保存在这个对象中<br>3、子执行环境可以访问父执行环境中的变量，父执行环境不能访问子执行环境中的变量<br>4、标识符解析是一个从当前执行环境开始逐级向父级执行环境搜索的过程<br>5、与C、C++等语言以代码块划分作用域不同，JavaScript以执行环境划分作用域<br>6、内部函数访问外部函数变量就会形成闭包<br>7、在创建函数阶段，会创建一个包含全局执行环境变量对象的作用域链，该作用域链被保存在[[Scop]]数组中,调用函数时会创建该函数的执行环境，复制[[Scope]]中的对象构建作用域链，被调用函数的变量对象（此时是活动对象）被push到作用域链最前端（栈顶）<br>8、</p>
@@ -307,7 +313,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript%E7%9A%84%E5%85%AD%E5%A4%A7%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">Javascript的六大作用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript%E7%9A%84%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%9B%B4%E6%96%B0%E8%8A%82%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">Javascript的几个重要更新节点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#id%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8Cclass%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">id选择器和class选择器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#JavaScript%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-number">4.</span> <span class="nav-text">JavaScript的一些注意点</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript%E7%9A%84%E5%85%AD%E5%A4%A7%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">Javascript的六大作用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript%E7%9A%84%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%9B%B4%E6%96%B0%E8%8A%82%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">Javascript的几个重要更新节点</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM"><span class="nav-number"></span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#id%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8Cclass%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">id选择器和class选择器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#JavaScript%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">JavaScript的一些注意点</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
