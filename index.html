@@ -443,7 +443,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-25 07:14:21" itemprop="dateModified" datetime="2020-12-25T07:14:21+08:00">2020-12-25</time>
+                <time title="Modified: 2020-12-25 22:05:52" itemprop="dateModified" datetime="2020-12-25T22:05:52+08:00">2020-12-25</time>
               </span>
 
           
@@ -534,10 +534,10 @@
 </tr>
 <tr>
 <td>2020/12/25</td>
-<td>链表、</td>
-<td></td>
-<td></td>
-<td>早上6:10~7:30</td>
+<td>链表、JavaScript作用域</td>
+<td>双向、循环链表看完</td>
+<td>跳表需要再看，《你所不了解的JavaScript（p16）》</td>
+<td>早上6:10<del>7:30 晚上8:00</del>11:00</td>
 </tr>
 </tbody></table>
 
@@ -590,7 +590,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-24 21:33:14" itemprop="dateModified" datetime="2020-12-24T21:33:14+08:00">2020-12-24</time>
+                <time title="Modified: 2020-12-25 22:16:23" itemprop="dateModified" datetime="2020-12-25T22:16:23+08:00">2020-12-25</time>
               </span>
 
           
@@ -629,6 +629,10 @@
 <li>2015：发布ES6，添加类和模块</li>
 <li>2016：发布ES7，添加指数运算符（**）和Array.prototype.includes</li>
 </ul>
+</blockquote>
+<h5 id="作用域与闭包"><a href="#作用域与闭包" class="headerlink" title="作用域与闭包"></a>作用域与闭包</h5><blockquote>
+<p>RHS：取值，LHS：取容器<br>在严格模式下，容器在全局作用域中也不存在的情况下，执行LHS查询会抛出ReferenceError，执行RHS查询失败会抛出TypeError，非严格模式下会自动创建一个全局变量<br>eval()函数接收一个字符串作为参数，可以在程序执行时修改书写期的词法作用域，如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">  <span class="built_in">eval</span>(<span class="string">&quot;var b=3;&quot;</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(a,b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b=<span class="number">2</span>;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
 </blockquote>
 <h5 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h5><blockquote>
 <p>DOM是针对HTML和XML文档的一个API，蒋文档描述为一个由多层节点构成的结构<br>通过DOM可以实现对HTML和XML文档某一部分的添加、删除和修改操作<br>JavaScript中的所有节点类型都继承自Node类型,每个节点都有一个nodeType属性<br>Node类型定义了12个数值常量来表示节点类型：<br>Node.ELEMENT_NODE == 1<br>Node.ATTRIBUTE_NODE == 2<br>Node.TEXT_NODE == 3<br>Node.CDATA_SECTION_NODE == 4<br>Node.ENTITY_REFERENCE_NODE == 5<br>Node.ENTITY_NODE == 6<br>Node.PROCESSING_INSTRUCTION_NODE == 7<br>Node.COMMENT_NODE == 8<br>Node.DOCUMENT_NODE == 9<br>Node.DOCUMENT_TYPE_NODE == 10<br>Node.DOCUMENT_FRAGMENT_NODE == 11<br>Node.NOTATION_NODE == 12<br>HTMLDocument类型继承自Document类型，document对象是HTMLDocument的实例，同时是windown对象的属性<br>document对象属性：指向html元素的documentElement属性，指向body的body属性，指向title的title属性，此外还有URL、domain以及referrer属性<br>Document类提供了getElementById()、getElementByTagName()方法</p>
