@@ -28,7 +28,7 @@
 <meta property="og:description" content="Javascript的六大作用 1、通过doucument.write直接写入html输入流2、处理onclick等事件3、通过document.getElementById.innerHtml改变html内容4、通过处理事件改变Html的图像5、改变Html样式6、验证输入  Javascript的几个重要更新节点  1997：发布ES1 1999：发布ES3，添加正则表达式和try&#x2F;catch">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-07T11:16:37.000Z">
-<meta property="article:modified_time" content="2020-12-25T14:16:23.174Z">
+<meta property="article:modified_time" content="2020-12-26T13:40:35.953Z">
 <meta property="article:author" content="耿伟">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-25 22:16:23" itemprop="dateModified" datetime="2020-12-25T22:16:23+08:00">2020-12-25</time>
+                <time title="Modified: 2020-12-26 21:40:35" itemprop="dateModified" datetime="2020-12-26T21:40:35+08:00">2020-12-26</time>
               </span>
 
           
@@ -220,9 +220,19 @@
 <li>2016：发布ES7，添加指数运算符（**）和Array.prototype.includes</li>
 </ul>
 </blockquote>
+<h5 id="执行环境"><a href="#执行环境" class="headerlink" title="执行环境"></a>执行环境</h5><blockquote>
+<p>一个变量或函数的执行环境定义了它能访问的其它数据以及它的行为<br>每个执行环境都有一个与之对应的<b>变量对象</b>，变量对象中存储了执行环境定义的所有变量和函数<br>JavaScript的垃圾回收机制：①标记清除②引用计数</p>
+</blockquote>
 <h5 id="作用域与闭包"><a href="#作用域与闭包" class="headerlink" title="作用域与闭包"></a>作用域与闭包</h5><blockquote>
 <p>RHS：取值，LHS：取容器<br>在严格模式下，容器在全局作用域中也不存在的情况下，执行LHS查询会抛出ReferenceError，执行RHS查询失败会抛出TypeError，非严格模式下会自动创建一个全局变量<br>eval()函数接收一个字符串作为参数，可以在程序执行时修改书写期的词法作用域，如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">  <span class="built_in">eval</span>(<span class="string">&quot;var b=3;&quot;</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(a,b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b=<span class="number">2</span>;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数声明</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">  <span class="built_in">eval</span>(<span class="string">&quot;var b=3;&quot;</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(a,b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b=<span class="number">2</span>;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数表达式</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a=<span class="number">2</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>var声明的变量的作用域为离该变量最近的一个作用域<br>利用try/catch、with语句以及let、const标识符可以创建块作用域</p>
+</blockquote>
+<h6 id="提升"><a href="#提升" class="headerlink" title="提升"></a>提升</h6><blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;         </span><br><span class="line">a=<span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//输出2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="keyword">var</span> a=<span class="number">2</span>;<span class="comment">//输出undefined</span></span><br></pre></td></tr></table></figure>
+<p>JavaScript引擎在编译阶段找出所有的变量声明，所以不管变量声明在何处，都会被提到最前面<br><b>闭包</b>：在定义函数的作用域之外调用函数时，该函数可以访问其所在作用域的变量</p>
 </blockquote>
 <h5 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h5><blockquote>
 <p>DOM是针对HTML和XML文档的一个API，蒋文档描述为一个由多层节点构成的结构<br>通过DOM可以实现对HTML和XML文档某一部分的添加、删除和修改操作<br>JavaScript中的所有节点类型都继承自Node类型,每个节点都有一个nodeType属性<br>Node类型定义了12个数值常量来表示节点类型：<br>Node.ELEMENT_NODE == 1<br>Node.ATTRIBUTE_NODE == 2<br>Node.TEXT_NODE == 3<br>Node.CDATA_SECTION_NODE == 4<br>Node.ENTITY_REFERENCE_NODE == 5<br>Node.ENTITY_NODE == 6<br>Node.PROCESSING_INSTRUCTION_NODE == 7<br>Node.COMMENT_NODE == 8<br>Node.DOCUMENT_NODE == 9<br>Node.DOCUMENT_TYPE_NODE == 10<br>Node.DOCUMENT_FRAGMENT_NODE == 11<br>Node.NOTATION_NODE == 12<br>HTMLDocument类型继承自Document类型，document对象是HTMLDocument的实例，同时是windown对象的属性<br>document对象属性：指向html元素的documentElement属性，指向body的body属性，指向title的title属性，此外还有URL、domain以及referrer属性<br>Document类提供了getElementById()、getElementByTagName()方法</p>
@@ -317,7 +327,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript%E7%9A%84%E5%85%AD%E5%A4%A7%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">Javascript的六大作用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript%E7%9A%84%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%9B%B4%E6%96%B0%E8%8A%82%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">Javascript的几个重要更新节点</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85"><span class="nav-number"></span> <span class="nav-text">作用域与闭包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM"><span class="nav-number"></span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#id%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8Cclass%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">id选择器和class选择器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#JavaScript%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">JavaScript的一些注意点</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript%E7%9A%84%E5%85%AD%E5%A4%A7%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">Javascript的六大作用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript%E7%9A%84%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%9B%B4%E6%96%B0%E8%8A%82%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">Javascript的几个重要更新节点</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="nav-number"></span> <span class="nav-text">执行环境</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85"><span class="nav-number"></span> <span class="nav-text">作用域与闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8F%90%E5%8D%87"><span class="nav-number">1.</span> <span class="nav-text">提升</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM"><span class="nav-number"></span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#id%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8Cclass%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">id选择器和class选择器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#JavaScript%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">JavaScript的一些注意点</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -331,7 +341,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
