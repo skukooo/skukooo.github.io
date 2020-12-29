@@ -28,7 +28,7 @@
 <meta property="og:description" content="Javascript的六大作用 1、通过doucument.write直接写入html输入流2、处理onclick等事件3、通过document.getElementById.innerHtml改变html内容4、通过处理事件改变Html的图像5、改变Html样式6、验证输入  Javascript的几个重要更新节点  1997：发布ES1 1999：发布ES3，添加正则表达式和try&#x2F;catch">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-07T11:16:37.000Z">
-<meta property="article:modified_time" content="2020-12-26T13:40:35.953Z">
+<meta property="article:modified_time" content="2020-12-28T13:30:27.221Z">
 <meta property="article:author" content="耿伟">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-26 21:40:35" itemprop="dateModified" datetime="2020-12-26T21:40:35+08:00">2020-12-26</time>
+                <time title="Modified: 2020-12-28 21:30:27" itemprop="dateModified" datetime="2020-12-28T21:30:27+08:00">2020-12-28</time>
               </span>
 
           
@@ -243,8 +243,18 @@
 <h6 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h6><blockquote>
 <p>函数内部有两个特殊的对象：arguments和this<br>arguments对象保存所有传入函数的参数，有一个callee属性，callee的属性值为指向函数的指针<br>this是函数执行环境对象的引用，在全局作用域中，this是window对象的引用</p>
 </blockquote>
+<h6 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h6><blockquote>
+<p>函数声明的一个重要特点是<b>函数声明提升</b>，函数表达式没有这个性质<br>命名函数表达式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">factorial=(<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">num</span>)</span>&#123;<span class="keyword">if</span>(num&lt;=<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;<span class="keyword">else</span> <span class="keyword">return</span> num*f(num-<span class="number">1</span>)&#125;)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h6 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h6><blockquote>
+<p>在全局环境下定义的变量不能通过delete删除，通过全局对象window创建的变量可以删除<br>window、location、navigator</p>
+</blockquote>
+<h5 id="浏览器检测"><a href="#浏览器检测" class="headerlink" title="浏览器检测"></a>浏览器检测</h5><h6 id="能力检测"><a href="#能力检测" class="headerlink" title="能力检测"></a>能力检测</h6><blockquote>
+<p>检测的两个原则：①优先检测通用特性②某个浏览器具有某个特性，不代表具有这个特性的一定是某个浏览器，比如IE支持document.all，但支持document.all的未必是IE<br>能力检测不是浏览器检测<br>用户代理字符串检测</p>
+</blockquote>
 <h6 id="JavaScript的一些注意点"><a href="#JavaScript的一些注意点" class="headerlink" title="JavaScript的一些注意点"></a>JavaScript的一些注意点</h6><blockquote>
-<p>1、在函数内部，通过var关键字可以显式地声明一个变量为局部变量，不加var关键字的变量被认为是全局变量，会覆盖函数外的同名变量<br>2、执行流进入函数，该函数的执行环境会被推入执行环境栈，函数执行完成后被弹出栈，每个执行环境都有一个与之关联的变量对象，环境中的所有变量和函数都保存在这个对象中<br>3、子执行环境可以访问父执行环境中的变量，父执行环境不能访问子执行环境中的变量<br>4、标识符解析是一个从当前执行环境开始逐级向父级执行环境搜索的过程<br>5、与C、C++等语言以代码块划分作用域不同，JavaScript以执行环境划分作用域<br>6、内部函数访问外部函数变量就会形成闭包<br>7、在创建函数阶段，会创建一个包含全局执行环境变量对象的作用域链，该作用域链被保存在[[Scop]]数组中,调用函数时会创建该函数的执行环境，复制[[Scope]]中的对象构建作用域链，被调用函数的变量对象（此时是活动对象）被push到作用域链最前端（栈顶）<br>8、</p>
+<p>1、在函数内部，通过var关键字可以显式地声明一个变量为局部变量，不加var关键字的变量被认为是全局变量，会覆盖函数外的同名变量<br>2、执行流进入函数，该函数的执行环境会被推入执行环境栈，函数执行完成后被弹出栈，每个执行环境都有一个与之关联的变量对象，环境中的所有变量和函数都保存在这个对象中<br>3、子执行环境可以访问父执行环境中的变量，父执行环境不能访问子执行环境中的变量<br>4、标识符解析是一个从当前执行环境开始逐级向父级执行环境搜索的过程<br>5、与C、C++等语言以代码块划分作用域不同，JavaScript以执行环境划分作用域<br>6、内部函数访问外部函数变量就会形成闭包<br>7、在创建函数阶段，会创建一个包含全局执行环境变量对象的作用域链，该作用域链被保存在[[Scop]]数组中,调用函数时会创建该函数的执行环境，复制[[Scope]]中的对象构建作用域链，被调用函数的变量对象（此时是活动对象）被push到作用域链最前端（栈顶）<br>8、   </p>
 </blockquote>
 
     </div>
@@ -327,7 +337,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript%E7%9A%84%E5%85%AD%E5%A4%A7%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">Javascript的六大作用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript%E7%9A%84%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%9B%B4%E6%96%B0%E8%8A%82%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">Javascript的几个重要更新节点</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="nav-number"></span> <span class="nav-text">执行环境</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85"><span class="nav-number"></span> <span class="nav-text">作用域与闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8F%90%E5%8D%87"><span class="nav-number">1.</span> <span class="nav-text">提升</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM"><span class="nav-number"></span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#id%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8Cclass%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">id选择器和class选择器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#JavaScript%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">JavaScript的一些注意点</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript%E7%9A%84%E5%85%AD%E5%A4%A7%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">Javascript的六大作用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Javascript%E7%9A%84%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%9B%B4%E6%96%B0%E8%8A%82%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">Javascript的几个重要更新节点</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="nav-number"></span> <span class="nav-text">执行环境</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85"><span class="nav-number"></span> <span class="nav-text">作用域与闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8F%90%E5%8D%87"><span class="nav-number">1.</span> <span class="nav-text">提升</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM"><span class="nav-number"></span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#id%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8Cclass%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">id选择器和class选择器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">函数表达式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#BOM"><span class="nav-number">4.</span> <span class="nav-text">BOM</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A3%80%E6%B5%8B"><span class="nav-number"></span> <span class="nav-text">浏览器检测</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%83%BD%E5%8A%9B%E6%A3%80%E6%B5%8B"><span class="nav-number">1.</span> <span class="nav-text">能力检测</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#JavaScript%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">JavaScript的一些注意点</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
